@@ -1,0 +1,117 @@
+// //TEMPLATE:
+@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
+{ 
+	@mass = 2.0
+	@rescaleFactor = 1.6
+	@category = Engine
+	
+	@MODULE[ModuleEngine*]
+	{
+		@name = ModuleEnginesRF
+		@maxThrust = 
+		@atmosphereCurve
+	   	{
+			@key,0 = 0 
+			@key,1 = 1 
+		}
+		!PROPELLANT[LiquidFuel] {}
+		!PROPELLANT[Oxidizer] {}
+		!PROPELLANT[MonoPropellant] {}
+		
+		PROPELLANT
+		{
+			name = #$@RFTO10XFuelConfigs/KERLOX/fuelName$
+			ratio = 1
+			DrawGauge = True
+			resourceFlowMode = STACK_PRIORITY_SEARCH
+		}
+		PROPELLANT
+		{
+			name = #$@RFTO10XFuelConfigs/KERLOX/OxidiserName$
+			ratio = #$@RFTO10XFuelConfigs/KERLOX/OxidiserRatio$
+			resourceFlowMode = STACK_PRIORITY_SEARCH
+		}
+	}
+	
+	MODULE
+	{
+		name = ModuleEngineConfigs
+		type = ModuleEnginesRF
+		techLevel = 
+		origTechLevel = 
+		engineType = 
+		origMass = #$../mass$
+		modded = false
+							
+		configuration = #$@RFTO10XFuelConfigs/_CHANGEME_/name$
+	
+		 //Configs here\\
+	}
+}
+
+		CONFIG
+		{
+			name = #$@RFTO10XFuelConfigs/_CHANGEME_/name$
+			maxThrust = #$../../MODULE[ModuleEngine*]/maxThrust$
+			@maxThrust *= #$@RFTO10XFuelConfigs/_CHANGEME_/thrustRatio$
+			
+			PROPELLANT
+			{
+				name = #$@RFTO10XFuelConfigs/_CHANGEME_/fuelName$
+				ratio = 1
+				DrawGauge = True
+				resourceFlowMode = STACK_PRIORITY_SEARCH
+			}
+			PROPELLANT
+			{
+				name = #$@RFTO10XFuelConfigs/_CHANGEME_/OxidiserName$
+				ratio = #$@RFTO10XFuelConfigs/_CHANGEME_/OxidiserRatio$
+				resourceFlowMode = STACK_PRIORITY_SEARCH
+			}
+			
+			IspSL = #$@RFTO10XFuelConfigs/_CHANGEME_/IspRatio$
+			IspV = #$@RFTO10XFuelConfigs/_CHANGEME_/IspRatio$
+			
+			ignitions = 1
+			ullage = False
+			pressureFed = False
+				
+			IGNITOR_RESOURCE
+			{
+				name = ElectricCharge
+				amount = 0.1
+			}
+		}
+		
+@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
+{
+	@rescaleFactor = 
+	@category = Engine
+	@mass = 
+	
+	@MODULE[ModuleEngine*]
+	{
+		//@name = ModuleEnginesRF
+		@maxThrust = 
+		
+		@atmosphereCurve
+		{
+			@key,0 = 0 
+			@key,1 = 1 
+		}
+		
+		@PROPELLANT[SolidFuel]
+		{
+			@name = HTPB
+			@ratio = 1.0
+			@DrawGauge = True
+		}
+	}
+
+	@RESOURCE[SolidFuel] //HTPB density = 1.8585g/cm3
+	{
+		@name = HTPB
+		@amount = 
+		@maxAmount = 
+	}
+}
