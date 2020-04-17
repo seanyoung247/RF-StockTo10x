@@ -1,8 +1,8 @@
 // //TEMPLATE:
 @PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
 { 
-	@mass = 2.0
-	@rescaleFactor = 1.6
+	@mass = 
+	%rescaleFactor = 1.6
 	@category = Engine
 	
 	@MODULE[ModuleEngine*]
@@ -85,7 +85,7 @@
 		
 @PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
 {
-	@rescaleFactor = 
+	%rescaleFactor = 
 	@category = Engine
 	@mass = 
 	
@@ -115,3 +115,53 @@
 		@maxAmount = 
 	}
 }
+
+
+TL0: 1945-1955, WW2 and early rocketry.
+
+TL1: 1957+, early Space Age rockets (straddles the divide between Redstone/Vanguard/R-5, and Atlas/R-7).
+
+TL2: 1962+, Gemini and Saturn I (not IB), Voskhod/Molniya.
+
+TL3: 1967+, Apollo
+
+TL4: 1968+, Apollo Applications Program, N1, etc.
+
+TL5: 1978+, Shuttle etc.
+
+TL6: 1985+, the Shuttle era, 80s and 90s LVs.
+
+Tl7: 2005+, the present day.
+
+
+
+O = 	Orbital maneuvering system. Designed for tons and tons of restarts, and vacuum-only use. Pressure-Fed.
+	High vac Isp, very poor SL isp, lowest TWR. Usually hypergolic. Real life examples: Apollo SPS, Shuttle OME. 
+	KSP example: LV-1
+
+U = 	Upper stage. At most a couple restarts. Same Vac Isp as O, better SL Isp, better TWR. Real life example: 
+	the Titan's LR-91. KSP example: KR-2L Rhino.
+
+U+ = 	Upper stage optimized for vac use. Aka "O with a turbopump." Highest Vac Isp (higher than O). Lower TWR than U. 
+	That's what + means, higher vac, lower SL, lower TWR. Real life examples: the Centaur's RL-10. KSP examples: LV-909, Poodle.
+
+L = 	lower stage. No restarts. Lowest Vac Isp, highest SL Isp barring Aerospike, highest TWR. Real life examples: 
+	RD-170 and 180 on Zenit and Atlas V. Fuel is usually kerolox, though could be hypergolic or even hydrolox. 
+	KSP example: the Mainsail, obviously.
+
+L+ = 	same changes as U+: higher IspV, lower IspSL, lower TWR. Designed for a single-stage-to-orbit stack 
+	(or at least an engine that's never staged away even if boosters are). Real life example: Space Shuttle SSME. 
+	Note that in real life most rockets have large lower stages and small upper stages, so most real life lower stage 
+	engines are somewhere between L and L+, if not outright L+. KSP example: LV-T45, Skipper.
+
+A = 	Aerospike. Note that in real life nozzle losses are only 15% or so, and most of the efficiency loss at sea level is 
+	because there's air there, not because the nozzle is the wrong shape. For now they have the Isp of a U in vacuum, 
+	and 0.9x that at sea level. Real life examples: J-2T-250k (plug nozzle mod of the Saturn V J-2), the linear aerospike 
+	on the X-33. KSP Examples: obvious.
+
+S = 	Solid.
+
+S+ = 	Solid for vac use, lower SL, higher Vac Isp.
+
+N = 	Nuclear Thermal. Approximately same ratio of IspV to IspSL as U. Uses a solid core reactor to heat reaction mass. 
+	Very low TWR, very high Isp. Real life examples: the various Project NERVA engines, RD-0410. KSP example: LV-N.
