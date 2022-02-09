@@ -1,7 +1,7 @@
 // //TEMPLATE:
 
  //Basic engine template
-@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
+@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[Z-RF-StockTo10x]
 { 
 	@mass = 
 	%rescaleFactor = 1.6
@@ -87,7 +87,7 @@
 		}
 	
  //Solid booster template	
-@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
+@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[Z-RF-StockTo10x]
 {
 	%rescaleFactor = 
 	@category = Engine
@@ -121,7 +121,7 @@
 }
 
  //Basic RCS template
-@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[RF-StockTo10x]
+@PART[]:NEEDS[RealFuels&!RealismOverhaul]:FOR[Z-RF-StockTo10x]
 { 
 	@MODULE[ModuleRCS*]
 	{
